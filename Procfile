@@ -1,0 +1,1 @@
+web: python managge.py migrate && gunicorn spidey_quotes_api.wsgi
