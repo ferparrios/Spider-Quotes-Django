@@ -1,1 +1,1 @@
-web: pip install django && python manage.py migrate && gunicorn spidey_quotes_api.wsgi
+web: python manage.py migrate && gunicorn spidey_quotes_api.wsgi
