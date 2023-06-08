@@ -78,10 +78,22 @@ WSGI_APPLICATION = 'spidey_quotes_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# mysql -hcontainers-us-west-88.railway.app -uroot -pQjUEgDBOHHKdvNB3VrqB --port 6676 --protocol=TCP railway
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'railway',
+        'USER': 'urrot',
+        'PASSWORD': 'pQjUEgDBOHHKdvNB3VrqB',
+        'HOST': 'hcontainers-us-west-88.railway.app',
+        'PORT': '6676'
     }
 }
 
