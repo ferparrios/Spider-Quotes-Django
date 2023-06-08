@@ -1,1 +1,1 @@
-web: python manage.py migrate && gunicorn spidey_quotes_api.wsgi
+web: source env/bin/activate && python manage.py migrate && gunicorn spidey_quotes_api.wsgi
