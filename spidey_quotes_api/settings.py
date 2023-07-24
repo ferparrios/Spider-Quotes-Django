@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     "corsheaders",
     "rest_framework",
     "coreapi",
+    'rest_framework_swagger',
     "quotes",
 ]
 
@@ -112,12 +113,25 @@ WSGI_APPLICATION = "spidey_quotes_api.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     "default": dj_database_url.config(
+#         # default="postgresql://postgres:postgres@localhost:5432/mysite",
+#         default="sqlite://db.sqlite3",
+#         conn_max_age=600,
+#     )
+# }
+
+# postgres://djangospideyquotes_user:el797gimCC4RvCmOuNOQMxOHX0IKUWIj@dpg-ci0pb4u4dad5j72ghudg-a.oregon-postgres.render.com/djangospideyquotes
+
 DATABASES = {
-    "default": dj_database_url.config(
-        # default="postgresql://postgres:postgres@localhost:5432/mysite",
-        default="sqlite://db.sqlite3",
-        conn_max_age=600,
-    )
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "djangospideyquotes",
+        "USER": "djangospideyquotes_user",
+        "PASSWORD": "el797gimCC4RvCmOuNOQMxOHX0IKUWIj",
+        "HOST": "dpg-ci0pb4u4dad5j72ghudg-a.oregon-postgres.render.com",
+        "PORT": "5432",
+    }
 }
 
 
@@ -166,7 +180,7 @@ if not DEBUG:
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CORS_ALLOWED_ORIGINS = []
+CORS_ALLOWED_ORIGINS = ["http://localhost:5173"]
 
 REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
