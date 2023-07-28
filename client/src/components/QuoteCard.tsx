@@ -4,7 +4,7 @@ interface QuoteCardProps {
 
 export const QuoteCard = ({ data }: QuoteCardProps) => {
   return (
-    <div className="grid grid-cols-3">
+    <div className="grid grid-cols-1">
       {data.map((quote: any) => (
         <div key={quote.id} className="bg-zinc-800 p-3 hover:bg-zinc-700">
           <h1 className="font-bold">{quote.quote}</h1>

@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { QuotePage } from "./pages/QuotePage";
 import { QuoteFormPage } from "./pages/QuoteFormPage";
-import { Navigation } from "./components/Navigation";
+import { HeroTitle } from "./components/HeroTitle";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="container mx-auto">
-        <Navigation />
+      <div className="mx-auto">
+        <HeroTitle />
         <Routes>
           <Route path="/" element={<Navigate to={"/quotes"} />} />
           <Route path="/quotes" element={<QuotePage />} />
